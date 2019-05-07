@@ -1,8 +1,8 @@
 # basic script to backup phone pictures via rsync if connected to a wifi and send a notification once done
 # the script can then scheduled to eg run nightly
-# BACKUP_DIR needs to be set in config.sh could be eg user@machine:/something/something
+# BACKUP_DIR needs to be set eg user@machine:/something/something
 
-source config.sh
+set -u
 FAILED_TITLE="Backup Failed"
 
 if termux-wifi-connectioninfo | jq -e .bssid ; then
